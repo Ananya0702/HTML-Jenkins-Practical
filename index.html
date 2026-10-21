@@ -2,174 +2,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration 💚</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenLeaf | Student Portal</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
 
-        body {
-            min-height: 100vh;
-            padding: 35px 15px;
-            background: linear-gradient(135deg, #dcfce7, #f0fdf4, #bbf7d0);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #14532d;
-        }
+body {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7, #f7fee7);
+    color: #14532d;
+    min-height: 100vh;
+}
 
-        .heading {
-            text-align: center;
-            margin-bottom: 28px;
-        }
+.navbar {
+    margin: 18px auto;
+    width: 94%;
+    max-width: 1250px;
+    padding: 17px 30px;
+    background: rgba(255,255,255,.88);
+    border: 1px solid white;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px #16653412;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
 
-        .heading .cap {
-            font-size: 48px;
-        }
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #166534;
+}
 
-        .heading h1 {
-            font-size: clamp(27px, 5vw, 42px);
-            margin: 8px 0;
-            color: #166534;
-        }
+.logo span {
+    color: #22a35a;
+}
 
-        .heading p {
-            color: #43845a;
-            font-size: 15px;
-        }
+.nav-links {
+    display: flex;
+    gap: 25px;
+    font-size: 14px;
+    font-weight: 600;
+}
 
-        .card {
-            width: 100%;
-            max-width: 480px;
-            padding: 32px;
-            background: rgba(255, 255, 255, 0.94);
-            border: 1px solid #bbf7d0;
-            border-radius: 25px;
-            box-shadow: 0 15px 45px rgba(22, 101, 52, 0.15);
-        }
+.nav-links a {
+    text-decoration: none;
+    color: #35634a;
+}
 
-        .welcome {
-            text-align: center;
-            margin-bottom: 28px;
-        }
+.nav-links a:hover {
+    color: #16a34a;
+}
 
-        .welcome .books {
-            font-size: 48px;
-        }
+.main {
+    max-width: 1150px;
+    width: 92%;
+    margin: 55px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
 
-        .welcome h2 {
-            font-size: 27px;
-            margin: 8px 0;
-            color: #166534;
-        }
+.hero {
+    padding: 15px 0;
+}
 
-        .welcome p {
-            color: #647c6a;
-            font-size: 14px;
-            line-height: 1.6;
-        }
+.illustration {
+    text-align: center;
+    font-size: 100px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 35px;
+    background: radial-gradient(circle, #bbf7d0, #dcfce7 65%, transparent 70%);
+}
 
-        .form-group {
-            margin-bottom: 21px;
-        }
+.hero h1 {
+    font-size: clamp(34px, 4vw, 49px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #166534;
+    margin-bottom: 18px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 9px;
-            font-size: 14px;
-            font-weight: 700;
-            color: #166534;
-        }
+.hero h1 span {
+    color: #22a35a;
+}
 
-        input {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            border: 1.5px solid #a7dfb8;
-            border-radius: 12px;
-            background: #f8fff9;
-            color: #14532d;
-            font-size: 15px;
-            outline: none;
-            transition: 0.25s;
-        }
+.hero p {
+    color: #527461;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 430px;
+}
 
-        input::placeholder {
-            color: #91a89a;
-        }
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
 
-        input:focus {
-            border-color: #16a34a;
-            background: white;
-            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
-        }
+.tag {
+    background: #ffffffb8;
+    border: 1px solid #bbf7d0;
+    padding: 10px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+}
 
-        button {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 30px;
-            background: linear-gradient(135deg, #22c55e, #15803d);
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 7px 18px rgba(22, 163, 74, 0.23);
-            transition: 0.25s;
-        }
+.card {
+    background: rgba(255,255,255,.94);
+    padding: 36px;
+    border: 1px solid #fff;
+    border-radius: 28px;
+    box-shadow: 0 20px 55px #16653418;
+}
 
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 24px rgba(22, 163, 74, 0.3);
-        }
+.card-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
 
-        #message {
-            display: none;
-            margin-top: 18px;
-            padding: 13px;
-            border-radius: 12px;
-            background: #dcfce7;
-            color: #166534;
-            text-align: center;
-            font-size: 14px;
-        }
+.card-heading .emoji {
+    font-size: 43px;
+}
 
-        .footer {
-            text-align: center;
-            margin-top: 24px;
-            color: #43845a;
-            font-size: 13px;
-            line-height: 1.8;
-        }
+.card-heading h2 {
+    font-size: 29px;
+    margin: 8px 0;
+    color: #166534;
+}
 
-        @media (max-width: 420px) {
-            .card {
-                padding: 23px 19px;
-            }
-        }
-    </style>
+.card-heading p {
+    color: #718578;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #245a3b;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1.5px solid #c5e8d0;
+    border-radius: 12px;
+    outline: none;
+    background: #f8fdf9;
+    color: #14532d;
+    font-size: 15px;
+    transition: .25s;
+}
+
+input:focus {
+    border-color: #22a35a;
+    background: white;
+    box-shadow: 0 0 0 4px #22c55e20;
+}
+
+input::placeholder {
+    color: #9aafa0;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(110deg, #4ade80, #16a34a, #15803d);
+    color: white;
+    font-size: 16px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #16a34a30;
+    transition: .25s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px #16a34a45;
+}
+
+button:active {
+    transform: scale(.98);
+}
+
+#message {
+    display: none;
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #dcfce7;
+    color: #166534;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.login-note {
+    text-align: center;
+    margin-top: 23px;
+    color: #829187;
+    font-size: 13px;
+}
+
+.quote {
+    margin-top: 22px;
+    padding: 15px;
+    border-radius: 13px;
+    background: #f0fdf4;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #34734c;
+}
+
+footer {
+    margin-top: 65px;
+    padding: 25px;
+    background: #166534;
+    color: #e0fce8;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 850px) {
+    .main {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 520px;
+        margin: 35px auto;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .tags {
+        justify-content: center;
+    }
+
+    .illustration {
+        font-size: 80px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 18px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+</style>
 </head>
 
 <body>
-    <header class="heading">
-        <div class="cap">🎓</div>
-        <h1>Student Registration</h1>
-        <p>🌱 Take the first step towards your dreams 💚</p>
-    </header>
 
-    <main class="card">
-        <section class="welcome">
-            <div class="books">📚</div>
-            <h2>👋 Welcome!</h2>
-            <p>Fill in your details and become a part of our learning community! 💚</p>
-        </section>
+<nav class="navbar">
+    <div class="logo">🎓 Green<span>Leaf</span></div>
+    <div class="nav-links">
+        <a href="#home">🏡 Home</a>
+        <a href="#about">🌱 About</a>
+        <a href="#registrationForm">👤 Register</a>
+    </div>
+</nav>
+
+<main class="main" id="home">
+
+    <section class="hero" id="about">
+        <div class="illustration">👩‍🎓 📚 🌿</div>
+
+        <h1>Dream Big.<br>Learn More.<br><span>Grow Together. 💚</span></h1>
+
+        <p>
+            Every great journey begins with a small step.
+            Join our learning community, discover your potential,
+            and create a brighter future for yourself! ✨
+        </p>
+
+        <div class="tags">
+            <div class="tag">🎯 Learn</div>
+            <div class="tag">🌱 Grow</div>
+            <div class="tag">⭐ Achieve</div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card-heading">
+            <div class="emoji">💚</div>
+            <h2>Welcome Aboard!</h2>
+            <p>Fill in your details and take the first step<br>
+            towards your dreams. 🚀</p>
+        </div>
 
         <form id="registrationForm">
             <div class="form-group">
@@ -181,7 +347,7 @@
             <div class="form-group">
                 <label for="email">✉️ Email Address *</label>
                 <input type="email" id="email" name="email"
-                       placeholder="Enter your email address" required>
+                       placeholder="you@example.com" required>
             </div>
 
             <div class="form-group">
@@ -189,32 +355,44 @@
                 <input type="tel" id="contact" name="contact"
                        placeholder="Enter 10-digit number"
                        pattern="[0-9]{10}"
-                       title="Please enter a 10-digit number" required>
+                       title="Enter a valid 10-digit number" required>
             </div>
 
-            <button type="submit">🚀 Register Now →</button>
+            <button type="submit">🌿 Register Now &nbsp; →</button>
 
             <div id="message" role="status" aria-live="polite"></div>
         </form>
 
-        <footer class="footer">
-            ✨ Your journey to success starts here ✨<br>
-            Made with 💚 and lots of ☕
-        </footer>
-    </main>
+        <div class="login-note">
+            ✨ Your future starts with one little step.
+        </div>
 
-    <script>
-        document.getElementById("registrationForm")
-            .addEventListener("submit", function(event) {
-                event.preventDefault();
+        <div class="quote">
+            🌱 “Small steps today, big achievements tomorrow.” 💚
+        </div>
+    </section>
 
-                document.getElementById("message").textContent =
-                    "🎉 Congratulations, " +
-                    document.getElementById("name").value.trim() +
-                    "! Your form has been submitted successfully 💚";
+</main>
 
-                document.getElementById("message").style.display = "block";
-            });
-    </script>
+<footer>
+    Made with 💚 for a brighter tomorrow &nbsp; | &nbsp; Keep learning, keep growing 🌿
+</footer>
+
+<script>
+document.getElementById("registrationForm")
+    .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const message = document.getElementById("message");
+
+        message.textContent =
+            "🎉 Congratulations, " + name +
+            "! Your registration form has been submitted successfully. 💚";
+
+        message.style.display = "block";
+    });
+</script>
+
 </body>
 </html>
