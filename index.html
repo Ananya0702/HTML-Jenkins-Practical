@@ -4,25 +4,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Student Registration 💚</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 35px 15px;
+            background: linear-gradient(135deg, #dcfce7, #f0fdf4, #bbf7d0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #14532d;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .heading .cap {
+            font-size: 48px;
+        }
+
+        .heading h1 {
+            font-size: clamp(27px, 5vw, 42px);
+            margin: 8px 0;
+            color: #166534;
+        }
+
+        .heading p {
+            color: #43845a;
+            font-size: 15px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 480px;
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid #bbf7d0;
+            border-radius: 25px;
+            box-shadow: 0 15px 45px rgba(22, 101, 52, 0.15);
+        }
+
+        .welcome {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .welcome .books {
+            font-size: 48px;
+        }
+
+        .welcome h2 {
+            font-size: 27px;
+            margin: 8px 0;
+            color: #166534;
+        }
+
+        .welcome p {
+            color: #647c6a;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 21px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #166534;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: 1.5px solid #a7dfb8;
+            border-radius: 12px;
+            background: #f8fff9;
+            color: #14532d;
+            font-size: 15px;
+            outline: none;
+            transition: 0.25s;
+        }
+
+        input::placeholder {
+            color: #91a89a;
+        }
+
+        input:focus {
+            border-color: #16a34a;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #22c55e, #15803d);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 7px 18px rgba(22, 163, 74, 0.23);
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(22, 163, 74, 0.3);
+        }
+
+        #message {
+            display: none;
+            margin-top: 18px;
+            padding: 13px;
+            border-radius: 12px;
+            background: #dcfce7;
+            color: #166534;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            color: #43845a;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 420px) {
+            .card {
+                padding: 23px 19px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Student Registration Form</h1>
+    <header class="heading">
+        <div class="cap">🎓</div>
+        <h1>Student Registration</h1>
+        <p>🌱 Take the first step towards your dreams 💚</p>
+    </header>
 
-    <form id="registrationForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
+    <main class="card">
+        <section class="welcome">
+            <div class="books">📚</div>
+            <h2>👋 Welcome!</h2>
+            <p>Fill in your details and become a part of our learning community! 💚</p>
+        </section>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">👤 Full Name *</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your full name" required>
+            </div>
 
-        <label for="contact">Contact Number:</label>
-        <input type="tel" id="contact" name="contact" required>
-        <br><br>
+            <div class="form-group">
+                <label for="email">✉️ Email Address *</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email address" required>
+            </div>
 
-        <button type="submit">Submit</button>
-    </form>
+            <div class="form-group">
+                <label for="contact">📱 Contact Number *</label>
+                <input type="tel" id="contact" name="contact"
+                       placeholder="Enter 10-digit number"
+                       pattern="[0-9]{10}"
+                       title="Please enter a 10-digit number" required>
+            </div>
+
+            <button type="submit">🚀 Register Now →</button>
+
+            <div id="message" role="status" aria-live="polite"></div>
+        </form>
+
+        <footer class="footer">
+            ✨ Your journey to success starts here ✨<br>
+            Made with 💚 and lots of ☕
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                document.getElementById("message").textContent =
+                    "🎉 Congratulations, " +
+                    document.getElementById("name").value.trim() +
+                    "! Your form has been submitted successfully 💚";
+
+                document.getElementById("message").style.display = "block";
+            });
+    </script>
 </body>
 </html>
